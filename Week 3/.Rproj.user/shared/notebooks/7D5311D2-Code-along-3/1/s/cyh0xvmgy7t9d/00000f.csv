@@ -1,0 +1,5 @@
+"0","# Install package"
+"0","# Load the package"
+"0","library(openintro)"
+"0","# Load package"
+"0","library(tidyverse)"

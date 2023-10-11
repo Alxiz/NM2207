@@ -1,0 +1,42 @@
+---
+title: "Week 8 challenge"
+author: "Deng Chunxi"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r,eval=FALSE, echo=TRUE}
+library(shiny)
+
+# Define UI for displaying current time ----
+ui <- fluidPage(
+  
+  h2(textOutput("currentTime")),
+  img(src = "Flag_of_Singapore.svg.jpg", height = 600, width = 400),
+  strong("The displayed time is Singapore-based")
+)
+
+# Define server logic to show current time, update every second ----
+server <- function(input, output, session) {
+  
+  output$currentTime <- renderText({
+    invalidateLater(1000, session)
+    paste("The current time is", Sys.time())
+  })
+  
+}
+
+
+# Create Shiny app ----
+shinyApp(ui, server)
+```
+
+```{r,eval=TRUE, echo=TRUE}
+knitr::include_graphics("Screenshot 2023-10-11 at 19.59.08.jpg")
+knitr::include_graphics("Screenshot 2023-10-11 at 19.10.42.jpg")
+```
+

@@ -1,0 +1,8 @@
+"0","ggplot(penguins, #Start with the penguins data frame"
+"0","aes(x = bill_depth_mm, y = bill_length_mm, #Mapping the x and y axis"
+"0","colour = species, #Separate each specie by colour"
+"0","shape = species, #Separate each specie by shape"
+"0","size = body_mass_g, #The size of the shape is determined by the mass"
+"0","alpha = flipper_length_mm)) + #Modify transparency"
+"0","geom_point() + #Represent each observation with a point"
+"0","scale_colour_viridis_d() #Use a discrete colour scale that is designed to be perceived by viewers with common forms of colour blindness. "

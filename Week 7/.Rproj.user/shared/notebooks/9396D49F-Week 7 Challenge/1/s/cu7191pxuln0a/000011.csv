@@ -1,0 +1,6 @@
+"0","ggplot(loans_full_schema, aes(x = homeownership, #using loans data frame, mapping x-axis"
+"0"," fill = grade)) + #filling with a categorical variable"
+"0"," geom_bar() #type of graph"
+"2","Error in ggplot(loans_full_schema, aes(x = homeownership, fill = grade)) : 
+  object 'loans_full_schema' not found
+"

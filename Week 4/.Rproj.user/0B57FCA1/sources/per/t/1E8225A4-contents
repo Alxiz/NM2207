@@ -1,0 +1,46 @@
+---
+pdf_document: default
+author: Deng Chunxi
+date: "`r Sys.Date()`"
+output:
+  html_document: null
+  df_print: paged
+  pdf_document: default
+title: "Week-4: Code-along"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# II. Code to edit and execute using the Code-along.Rmd file 
+<br>
+
+## A. Data Wrangling
+<br>
+
+### 1. Loading packages (Slide #16)
+
+```{r, eval=TRUE,echo=TRUE}
+# Load package tidyverse
+library(tidyverse)
+library(dbplyr)
+```
+
+### 2. Loading data-set (Slide #16)
+
+```{r, eval=FALSE,echo=TRUE}
+# Read data from the hotels.csv file and assign it to a variable named, "hotels"
+hotels <- read_csv("hotels.csv")
+
+```
+
+### 3. List names of the variables in the data-set (Slide #19)
+
+```{r, eval=FALSE,echo=TRUE}
+# Enter code here
+names(hotels)
+
+```
+
+

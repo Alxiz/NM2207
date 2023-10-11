@@ -1,0 +1,1 @@
+{"frames":[{"func":"ggplot(loans_full_schema, aes(x = homeownership, fill = grade))","file":"","line_number":0,"end_line_number":0,"character_number":0,"end_character_number":0}],"message":"Error in ggplot(loans_full_schema, aes(x = homeownership, fill = grade)) : \n  object 'loans_full_schema' not found\n"}

@@ -1,0 +1,3 @@
+"0","# Example 3 for data_type=double"
+"0","sample_sizes <- c(5, 10, 15, 20, 25000)"
+"0","sample_means <- rep(0, length(sample_sizes))"

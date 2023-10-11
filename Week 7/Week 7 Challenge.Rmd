@@ -1,0 +1,148 @@
+---
+title: "Week 7 Challenge"
+author: "Deng Chunxi"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+`{r. echo=FALSE} library(tidyverse) library(palmerpenguins) glimpse(penguins)`
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r, eval=TRUE, echo=TRUE}
+library(ggplot2)
+library(tidyverse)
+library(palmerpenguins)
+ggplot(data = penguins, #Start with the penguins data frame
+mapping = aes(x = bill_depth_mm, #Map bill depth to the x-axis
+y = bill_length_mm, #Map bill length to the y-axis
+colour = species)) + #Map species to the colour of each point
+geom_point() + #Represent each observation with a point
+labs(title = "Bill depth and length", #Title the plot "Bill depth and length"
+subtitle = "Dimensions for Adelie, Chinstrap, and Gentoo Penguins", #Add the subtitle "Dimensions for Adelie, Chinstrap, and Gentoo Penguins"
+x = "Bill depth (mm)", y = "Bill length (mm)", #Label the x and y axes as "Bill depth (mm)" and "Bill length (mm)", respectively
+colour = "Species", #Label the legend "Species"
+caption = "Source: Palmer Station LTER", #Add a caption for the data source
+scale_colour_viridis_d()) #Use a discrete colour scale that is designed to be perceived by viewers with common forms of colour blindness.
+```
+
+```{r, eval=TRUE, echo=TRUE}
+ggplot(penguins, #Start with the penguins data frame
+aes(x = bill_depth_mm, y = bill_length_mm, #Mapping the x and y axis
+colour = species, #Separate each specie by colour
+shape = species, #Separate each specie by shape
+size = body_mass_g, #The size of the shape is determined by the mass
+alpha = flipper_length_mm)) + #Modify transparency
+geom_point() + #Represent each observation with a point
+scale_colour_viridis_d() #Use a discrete colour scale that is designed to be perceived by viewers with common forms of colour blindness. 
+```
+
+```{r, eval=TRUE, echo=TRUE}
+library(openintro)
+glimpse(loans_full_schema)
+```
+
+
+```{r, eval=TRUE, echo=TRUE}
+ggplot(loans_full_schema, #Start with the loans_full_scheme data frame
+aes(x = loan_amount, #Map loan_amount to x-axis
+fill = homeownership)) + #selecting the variable homeownership
+geom_histogram(binwidth = 5000, alpha = 0.5) + #Setting the width and transparency of the histogram
+labs(x = "Loan amount ($)", #Label the x axis
+     y = "Frequency", #Label the y axis
+     title = "Amounts of Lending Club loans") #Label the title
+```
+
+```{r, eval=TRUE, echo=TRUE}
+ggplot(loans_full_schema, #start with the data frame
+       aes(x = loan_amount, fill = homeownership)) + #map loan_amount to x-axis and fill with homeownership
+  geom_histogram(binwidth = 5000) + #adjust binwidth to 5000
+labs(x = "Loan amount ($)",y = "Frequency",title = "Amounts of Lending Club loans") + #Label the graph
+facet_wrap(~ homeownership, nrow = 3) #Number of rows
+```
+
+```{r, eval=TRUE, echo=TRUE}
+ggplot(loans_full_schema, #Start with data frame
+       aes(x = loan_amount)) + #Map loan_amount to x-axis
+geom_density(adjust = 0.5) #adjudt binwidth to 0.5
+```
+
+
+
+```{r, eval=TRUE, echo=TRUE}
+ggplot(loans_full_schema %>% #Start with the loans_full_scheme data frame
+filter(debt_to_income < 100), #Filter the variable debt_to_income which is less than 100
+aes(x = debt_to_income, #Map debt_to_income to x-axis
+y = interest_rate)) + #Map interest_rate to y-axis
+geom_hex() #Represent each observation with a hex
+```
+
+```{r, eval=TRUE, echo=TRUE}
+ggplot(loans_full_schema, #Start with the loans_full_schema data frame
+       aes(x = homeownership, fill = grade)) + # #Map homeownership to x-axis and fill with grade
+geom_bar(position = "fill") #Calculate the proportion by percentage
+```
+
+```{r, eval=TRUE, echo=TRUE}
+ggplot(loans_full_schema, aes(x = interest_rate)) + #giving x-axis a frame 
+ geom_boxplot() + #type of chart
+ labs(x = "Interest rate (%)",y = NULL, #mapping to the x-axis and y-axis
+ title = "Interest rates of Lending Club loans") + #giving a title to the graph
+ theme( axis.ticks.y = element_blank(), axis.text.y = element_blank() ) #customising the non-data components of the graph
+```
+
+```{r, eval=TRUE, echo=TRUE}
+ggplot(loans_full_schema, aes(x = homeownership, #using loans data frame, mapping x-axis
+ fill = grade)) + #filling with a categorical variable
+ geom_bar() #type of graph
+```
+
+```{r, eval=TRUE, echo=TRUE}
+ggplot(loans_full_schema, #Start with loan_full_schema date frame
+       aes(x = debt_to_income, y = interest_rate)) + #Label the x and y axis
+geom_point() #Represent each observation as a point
+```
+
+
+```{r, eval=TRUE, echo=TRUE}
+ggplot(loans_full_schema, #Start with the loans_full_schema data frame
+      aes(x = loan_amount, fill = homeownership)) + #Map loan-amount to x-axis and fill with homeownership
+geom_density(adjust = 2, alpha = 0.5) + #adjuste bandwidth to 2 and transparency to 0.5
+labs(x = "Loan amount ($)", #Label x-axis
+     y = "Density", #Label y-axis
+     title = "Amounts of Lending Club loans", fill = "Homeownership") #Label title and fill with homeownership
+
+```
+
+
+```{r, eval=TRUE, echo=TRUE}
+ggplot(loans_full_schema, #Start with the loans_full_scheme data frame
+aes(y = homeownership, fill = grade)) + #Map homeownership to y-axis and fill with grade
+geom_bar(position = "fill") + #Calculate the proportion for each grade
+labs( x = "Proportion", #Label x-axis
+      y = "Homeownership", #Label y-axis
+      fill = "Grade", #Calculate the proportion for each grade
+      title = "Grades of Lending Club loans") #Label title
+```
+
+```{r, eval=TRUE, echo=TRUE}
+library(ggridges)
+ggplot(loans_full_schema, #Start with the loans_full_scheme data frame
+       aes(x = loan_amount, #Map loan-amount to x-axis
+           y = grade, #Map grade to y-axis
+           fill = grade, #Represent each grade as proportion
+           color = grade)) + #Separate each grade by colour
+geom_density_ridges(alpha = 0.5) #Setting the transparency 
+```

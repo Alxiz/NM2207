@@ -1,0 +1,7 @@
+"0","ggplot(loans_full_schema, #Start with the loans_full_scheme data frame"
+"0","aes(y = homeownership, fill = grade)) + ##Map homeownership to x-axis and fill with grade"
+"0","geom_bar(position = ""fill"") + "
+"0","labs( x = ""Proportion"", "
+"0","      y = ""Homeownership"", "
+"0","      fill = ""Grade"", "
+"0","      title = ""Grades of Lending Club loans"")"

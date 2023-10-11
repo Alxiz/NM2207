@@ -1,0 +1,8 @@
+"0","ggplot(loans_full_schema, #start with the data frame"
+"0","       aes(x = loan_amount, fill = homeownership)) + #map loan_amount to x-axis and fill with homeownership"
+"0","  geom_histogram(binwidth = 5000) + #adjust binwidth to 5000"
+"0","labs(x = ""Loan amount ($)"",y = ""Frequency"",title = ""Amounts of Lending Club loans"") + #Label the graph"
+"0","facet_wrap(~ homeownership, nrow = 3) #Number of rows"
+"2","Error in ggplot(loans_full_schema, aes(x = loan_amount, fill = homeownership)) : 
+  object 'loans_full_schema' not found
+"
