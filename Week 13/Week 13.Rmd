@@ -1,0 +1,151 @@
+---
+title: "Questions"
+author: "Deng Chunxi"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#Week 9
+```{r, eval=TRUE, echo=TRUE}
+#What is the topic that you have finalized?
+#The topic that I have finalised is World War II.
+```
+
+```{r, eval=TRUE, echo=TRUE}
+#(2) What are the data sources that you have curated so far?
+#I will be using data from https://www.kaggle.com/datasets/ramjasmaurya/world-war-2-archive, https://www.kaggle.com/datasets/notkrishna/world-war-2-causalities-by-country
+#It analyses the types of weapons used,vehicles and casualties, 
+```
+
+#Week 10 
+```{r, eval=TRUE, echo=TRUE}
+#(1) What is the question that you are going to answer? (Answer: One sentence that ends with a question mark that could act like the title of your data story),
+
+#Who suffered the most from WWII? 
+```
+
+```{r, eval=TRUE, echo=TRUE}
+#(2) Why is this an important question? (Answer: 3 sentences, each of which has some evidence, e.g., “According to the United Nations...” to justify why the question you have chosen is important
+
+#1.According to the UN, lessons from WWII is still relevant in guiding the work of UN.
+#2.According to the UN, WWII established the standard for judging evil empires and tyrants, we need to remember those that sacrificed themselves for a greater good of humanity.
+#3.According to the UN, having survived the catastrophe of World War II, humankind sought to embrace new means to prevent the recurrence of such tragic events. 
+```
+
+```{r, eval=TRUE, echo=TRUE}
+#(3) Which rows and columns of the dataset will be used to answer this question? (Answer: Actual names of the variables in the dataset that you plan to use).
+
+#Primary role, country, total population, military death from all causes, civilians due to military and crimes against humanity, total deaths, death % compared to population at the start of war, avg death
+```
+
+```{r, eval=TRUE, echo=TRUE}
+#I had problem embedding the shiny app onto my website. When I keyed in the URL, Rstudio did not recognise the code as a HTML and instead read it as text. 
+```
+
+#Week 11
+```{r, eval=TRUE, echo=TRUE}
+#(1) List the visualizations that you are going to use in your project (Answer: What are the variables that you are going to plot? How will it answer your larger question?),
+
+#I am using a bar graph which expresses the percentage of casualties from the 7 significant countries. There is also another interactive shiny app which display 4 different categories of military resources that the 7 countries had contributed in, they are aircrafts, vehicles, weapons and ships. This interactive graph is expressed as percentage too. By analysing the casualties and resources poured into WW2, I can conclude which country suffered the most from WW2. 
+
+
+#(2) How do you plan to make it interactive? (Answer: features of ggplot2/shiny/markdown do you plan to use to make the story interactive) ,
+
+#I have an interactive shiny app that allows the user to select the 4 categories of military resources that the 7 countries had contributed in. 
+
+#(3) What concepts incorporated in your project were taught in the course and which ones were self-learnt? (Answer: Create a table with topics in one column and Weeks in the other to indicate which concept taught in which week is being used. Leave the entry of the Week column empty for self-learnt concepts)
+
+read.csv("table.csv")
+
+```
+
+#Week 12
+```{r, eval=TRUE, echo=TRUE}
+#I faced challenge when removing the background of the graphs. The graphs have white backgrounds that do not match with the aesthetic of the website. Therefore, I wanted it to have the same colour as the background of the website. The solution is to include the following code in plot_ly. 
+#plot_bgcolor = "#272b31",
+#paper_bgcolor = "#272b31",
+#font = list(color = "white")
+```
+
+#Final submission
+```{r, eval=TRUE, echo=TRUE}
+#(1) What is the theme of your data story?
+
+#The theme of my data story is World War II (WWII), centering around the eight significant countries – the Allied Powers: France, Italy, Poland, Soviet Union, United Kingdom and United States; the Axis Powers: Germany and Japan. They were the major powers in WWII. 
+```
+
+```{r, eval=TRUE, echo=TRUE}
+#(2) Why is it important to address this question?
+
+#The question is “which country suffered the most from WWII?” Analysing the impact of WWII on individual countries is crucial for understanding the profound and lasting effects of one of the most significant events in human history. The war, which spanned from 1939 to 1945, reshaped political, social, and economic landscapes globally. Examining the specific hardships experienced by different nations allows us to appreciate the diverse challenges faced by societies and the varying degrees of recovery and resilience that followed.
+
+```
+
+```{r, eval=TRUE, echo=TRUE}
+#(3) Why do you think the data sources that you have curated can help you answer the question?
+
+#My data sources consist of casualties from each country, types of military resources – aircrafts, ships, vehicles, weapons used by each country. 
+
+#Firstly, casualty figures reveal the staggering cost borne by populations. Understanding the extent of human suffering emphasises the social and political damage of World War II. Casualty figures also reveal the severity of WWII. Casualty figures consist of both military deaths and civilians deaths. Military deaths the extent of military manpower the countries had devoted into the war while civilian deaths reveals the damage done to the countries socially. 
+
+#Secondly, military resources are crucial in finding out the economic loss by each country. Analysing military resources sheds light on the economic mobilisation efforts, war production, and the overall economic strategies adopted by nations during the conflict. The more military resources were poured into the war, the more economic loss borned by the countries. 
+```
+
+```{r, eval=TRUE, echo=TRUE}
+#(4) What are the insights from the data and how are they depicted in plots?
+
+#In terms of casualties, the graph displays the total deaths of the 8 significant countries expressed as percentage. A function of  hoverinfo is added to display the actual percentages and death counts. The top 4 countries that suffered the most deaths are the Soviet Union, Germany, Poland and Japan. The Soviet Union accounts for 59.4% of the total casualties, while Germany and Poland account for 16.3% and 13.2% respectively. Japan accounts for 6.8% while the rest of the countries each account for less than 1.5% of total deaths. 
+
+#As for the types of military resources, the data is displayed as a graph and table. The graph shows the count of each type of military resource expressed as a percentage. The graph has a legend that allows users to filter the type of military resources. The table displays all the military resources used by the 8 significant countries. It enables users to filter by military resources and country. 
+
+#Aircraft
+#The top 3 countries with the most types of aircraft used are the US, Japan and Germany. The US devoted the most crafts, accounting for 22.8% of the total types of aircraft. Second and third are Japan and Germany, with 22.5% and 16.4% respectively.
+
+#Even before the US formally entered the war, it provided significant military assistance, including aircrafts, to Allied nations through the Lend-Lease program (Lend-Lease and Military Aid to the Allies in the Early Years of World War II, n.d.). After the Japanese attack of the Pearl Harbour, the US became directly involved in both the European and Pacific theatres of the war. However, the actual war zones were relatively far from the US ground. Therefore, a large and diverse air force is required to support military operations on multiple fronts. Specifically, the US strategic bombing campaigns in Europe and the Pacific required a substantial number of aircraft. The B-17 Flying Fortress and the B-24 Liberator, among other bomber models, were extensively used in these campaigns (World War II Aircraft of United States | World War II Database, n.d.). 
+
+#Ships
+#The top 3 countries with the most types of ships used are Germany, the US and Japan. Germany devoted the most ships, accounting for 54.6% of the total types of vehicles. Second and third are the U.S and Japan, with 27.0% and 8.8% respectively.
+
+#Germany used the most types of ships, particularly submarines (U-boats) because of their costs and Germany’s geographical location. The defeat in World War I took a heavy toll on Germany’s economy and industrial capacity. U-boats were seen as a cost-effective means and therefore were prioritised over large surface fleets. Moreover, Germany’s location in Europe allowed U-boats relatively easy access to the Atlantic Ocean and the North Sea (Ray, 2023). Coastal waters provided natural hiding places for U-boats to operate from and return to. This allowed Germany to launch surprise attacks on the Allied Powers.
+
+#Vehicles
+#The top 3 countries with the most types of vehicles used are Germany, the UK and the US. Germany devoted the most vehicles, accounting for 21.0% of the total types of vehicles. Second and third are the UK and the US, with 19.3% and 15.5% respectively.
+
+#Germany used the most types of vehicles because of their Blitzkrieg tactics. The Blitzkrieg (lightning warfare) tactics required highly mobile and mechanised forces (A&E Television Networks, 2022). The German military emphasised the rapid movement of troops and equipment, and this approach necessitated a significant investment in various types of vehicles. They heavily relied on mechanised units, which were equipped with armoured personnel carriers and infantry fighting vehicles for transport and combat.
+
+#Weapons
+#The top 3 countries with the most types of weapons used are Germany, the U.S and Japan. Germany devoted the most weapons, accounting for 88.0% of the total types of vehicles. Second and third are the U.S and Japan, with 17.6% and 14.8% respectively.
+
+#Similar to Germany’s devotion to the use of vehicles, the Blitzkrieg tactics also emphasised rapid and coordinated attacks by combined arms, including infantry and tanks. This required a diverse array of weapons such as infantry (rifles, machine guns and grenades) and artillery (Nebelwerfer – rocket launcher). 
+```
+
+```{r, eval=TRUE, echo=TRUE}
+#(5) How did you implement this entire project? Were there any new concepts that you learnt to implement some aspects of it?
+
+#The project consists of 3 shinyapps. For the sake of comparison, the data that are represented as percentages were displayed as bar graphs. This allows the users to clearly tell which countries had the highest percentage in each category. Both graphs include a function of hoverinfo that allows users to see the actual percentage and count of each category. Lastly, a table is introduced to display all types of military resources, with their names, roles, manufacturer and country shown. This allows users to reference the types of military resources easily. 
+
+#For the graphs, the new concept I have learned is how to include hoverinfo to make the graphs interactive. Moreover, I learned how to change the background of the graphs to any desired colour. For my graphs, the default background colour was white, which drastically contrasts the theme of the webpage. Therefore, I wanted to make both the backgrounds the same colour. I learned that this can be achieved by the codes in plot_ly. 
+#plot_bgcolor = "#272b31",
+#paper_bgcolor = "#272b31"
+```
+
+```{r, eval=TRUE, echo=TRUE}
+#1143 words
+```
+
+```{r, eval=TRUE, echo=TRUE}
+#References
+
+#A&E Television Networks. (2022, December 12). Blitzkrieg: Definition, London & World War II. HISTORY. https://www.history.com/topics/world-war-ii/blitzkrieg
+
+#Milestones: 1937–1945—Office of the Historian. (n.d.). Retrieved November 22, 2023, from https://history.state.gov/milestones/1937-1945/lend-lease
+
+#Ray, M. (2023, October 31). U-boat | German Submarine Warfare in WWI & WWII | Britannica. https://www.britannica.com/technology/U-boat
+
+#World War II Aircraft of United States | World War II Database. (n.d.). Retrieved November 22, 2023, from https://ww2db.com/aircraft.php?list=c&q=2
+
+```
